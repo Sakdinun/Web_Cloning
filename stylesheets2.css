@@ -615,6 +615,8 @@ h1 {
     transform: none;
 }
 
+
+
 @media screen and (min-width: 1008px) {
     .Slideshow__Content {
         padding: 0 60px;
@@ -625,6 +627,18 @@ h1 {
 .SectionHeader__ButtonWrapper {
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+/* h2.SectionHeader__Heading {
+    font-weight: 600;
+} */
+
+@media screen and (min-width: 769px){
+    .SectionHeader .Button--primary {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 12px;
+    }
 }
 
 #section-slideshow .Button {
@@ -639,12 +653,40 @@ h1 {
     justify-content: center;
     align-items: center;
     margin: -12px;
+    
 }
 
+
+@media screen and (max-width: 768px){
+    .Slideshow__Content .SectionHeader {
+        margin-left: 1.5em;
+    }
+    
+    .ButtonGroup {
+        flex-direction: column;
+    }
+    
+    .ButtonGroup .ButtonGroup__Item {
+        width: 254px;
+        padding: 14px 28px;
+        text-align: center;
+        font-size: 12px;
+    }
+}
 .ButtonGroup__Item {
     margin: 12px;
 }
 
+@media screen and (min-width: 769px) {
+    a.ButtonGroup__Item {
+        text-transform: uppercase;
+        min-width: 143px;
+        font-size: 13px;
+        text-align: center;
+        margin: 8px !important;
+        padding: 10px 15px !important;
+    }
+}
 .ButtonGroup--spacingSmall .ButtonGroup__Item {
     margin: 8px;
 }
@@ -680,8 +722,8 @@ h1 {
     position: absolute;
     width: auto;
     margin: 0;
-    bottom: 50px;
-    left: 50%;
+    bottom: 25px;
+    left: 5%;
     display: flex;
     align-items: center;
     z-index: 3;
@@ -690,6 +732,7 @@ h1 {
 @media screen and (min-width: 789px) {
     .Carousel--insideDots .flickity-page-dots {
         margin: 0 auto;
+        left: 50%;
         transform: translateX(-50%);
     }
 }
@@ -986,7 +1029,7 @@ h1 {
 
 
 .swiper-wrapper .swiper-slide {
-    background-color: #6a5454;
+    background-color: #f0f0f0;
     text-align: center;
     height: 80% ;
     width: auto !important;  /* Let Swiper manage sizing */
@@ -1005,7 +1048,7 @@ h1 {
 
 .swiper-wrapper .swiper-slide-active {
     height: 410px;
-    background-color: #d46666;
+    background-color: #f0f0f0;
     transform: scale(1.5);
     z-index: 2;
 
@@ -1138,9 +1181,15 @@ h1 {
     font-weight: 500;
     border: 1px solid #000;
     letter-spacing: 2.6px;
+    text-transform: uppercase;
 }
 
-
+@media screen and (min-width: 789px) {
+    .item-inner .Button {
+        padding: 14px 28px;
+        min-width: 165px;
+    }
+}
 
 .swiper-slide button {
     background-color: black;
@@ -1192,6 +1241,7 @@ h1 {
 .SectionHeader:not(:only-child) {
     margin-bottom: 40px;
 }
+
 
 @media screen and (min-width: 1008px) {
     .SectionHeader:not(:only-child) {
@@ -2071,7 +2121,7 @@ Footer
     border-color: rgb(217, 217, 217);
     border: 1px solid;
     padding: 4px 11px;
-    width: 50vh;
+    width: 24vh;
 }
 
 
