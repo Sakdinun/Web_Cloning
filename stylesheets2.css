@@ -25,6 +25,70 @@ img {
 section {
     display: block;
 }
+
+
+.frame {
+    position:fixed;
+    bottom: 26px;
+    z-index: 80;
+    right: 20px;
+}
+
+.frame-content {
+    display: flex;
+    align-items: center;
+}
+.frame-content button {
+    font-family: Mulish, sans-serif;
+    font-size: 17px;
+    border: 0px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 16px;
+    height: 42px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 20px rgba(0, 18, 46, .18)
+}
+
+.emoji {
+    width: 20px;
+    margin: 0px 2px -5px;
+    user-select: none;
+}
+
+button.Widget-button {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(5, 102, 255);
+} 
+
+@media screen and (max-width: 768px) {
+    .frame {
+        bottom: 70px;
+    }
+
+    button.Widget-button{
+        width: 40px;
+        height: 40px;
+    }
+
+    button.Widget-button svg{
+        width: 16px;
+        height: 16px;
+    }
+    button.Widget-button path{
+        width: 12px;
+        height: 12px;
+    }
+}
+
+
+
 .Drawer[aria-hidden=false] {
     visibility: visible;
     transform: translateX(0);
@@ -319,6 +383,18 @@ section {
     padding: 15px 18px;
     z-index: 1000; 
 }
+
+@media screen and (min-width: 789px) {
+    .Header__Wrapper {
+        padding: 18px 60px ;
+        background-color: rgba(0,0,0,.0);
+        transition: 0.2s;
+    }
+    
+    .Header__Wrapper:hover {
+        background-color: rgba(255,255,255,1);
+    }
+}
 .header--dark {
     background-color: #000 
 }
@@ -362,7 +438,8 @@ section {
     left: 0px;
     position: absolute;
     transition: all 0.25s ease-out;
-    background: #000000;
+    background: #fff1f1;
+    background: #000;
 }
 .header--white {
     background: #fff;
@@ -533,6 +610,27 @@ h1 {
                     /* Header_Carousel */
 /* ============================================================== */
 
+/* Special navbar */
+#shopify-section-header {
+    position: absolute !important; 
+    /* top: 70px; */
+}
+
+
+#shopify-section-slideshow {
+    position:relative;
+    /* margin-top: 60px; */
+}
+@media screen and (max-width: 768px){
+    #shopify-section-slideshow {
+        /* position:relative; */
+        margin-top: 60px;
+    }
+
+}
+
+
+
 .flickity-viewport {
     height: auto ;
     /* min-height: 500px; */
@@ -545,11 +643,11 @@ h1 {
     cursor: grab;
 } */
 
-.flickity-viewport,
+/* .flickity-viewport,
 .flickity-slider,
 .Carousel__Cell {
   outline: 2px solid red;
-}
+} */
 
 
 .AspectRatio {
@@ -576,11 +674,11 @@ h1 {
 
 .Slideshow__Overlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, .3); /* dark layer */
+  background: rgba(0, 0, 0, .4); /* dark layer */
   z-index: 1;
 }
 
@@ -750,6 +848,32 @@ h1 {
         border-width: 2px;
     }
 }
+
+
+.RoundButton {
+    position: absolute;
+    left: calc(50% - 25px);
+    bottom: -25px;
+    z-index: 4;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(54, 54, 54, 0.15);
+}
+
+
+.RoundButton svg {
+    height: 18px;
+    width: 18px;
+}
+
+
+
+
+
 /* 
 .flickity-enabled {
     -webkit-tap-highlight-color: transparent;
@@ -1450,7 +1574,7 @@ h2 {
 
 .CollectionItem__Image {
     height: 450px;
-    background-color: red;
+    /* background-color: red; */
     background-size: cover;
 }
 
@@ -2121,10 +2245,15 @@ Footer
     border-color: rgb(217, 217, 217);
     border: 1px solid;
     padding: 4px 11px;
-    width: 24vh;
+    width: auto;
 }
 
-
+.ArrowButton {
+    background-color: #fff;
+    border: none;
+    padding: 14px 28px;
+    display: block;
+}
 @media screen and (max-width: 520px) {
     .sfhc-right {
         width: 100%;
@@ -2140,7 +2269,6 @@ Footer
     font-style: normal;
     font-weight: 500;
     width: 100%; /* allow it to scale */
-    max-width: 256px; /* limit max size */
     /* justify-content: center; */
     align-items: center;
 }
@@ -2157,7 +2285,7 @@ Footer
     flex: 1 1 auto;
     padding: 14px;
     box-sizing: border-box;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     color: rgb(201, 202, 202);
     font-size: 16px;
 }
@@ -2222,13 +2350,24 @@ svg .icon path{
     font-weight: 500;
     padding: 20px 0;
 }
-.Footer__Block--text {
-    position: relative;
-}
-@media screen {
+
+@media screen and (min-width: 789px ) {
+    .Footer__Block.Footer__Block--links{
+        padding-bottom: 0px;
+        padding-top: 0px;
+        line-height: 23.1px;
+    }
+
+    .Footer__Block--text {
+        position: relative;
+    }
     
+    .Footer__Block--text .Footer__Social {
+        position: absolute;
+        bottom: 0px;
+    }
 }
-.Footer__Social
+
 
 .Footer__Title.Footer_link__Title {
     display: flex;
@@ -2240,6 +2379,10 @@ svg .icon path{
     margin: 0;
     font-weight: 700;
 }
+
+/* @media screen and (min-width: 769px) {
+    .u-h6 {
+        /* text-align: left; */
 
 @media screen and (max-width: 768px) {
     .Footer_link_Linklist {
@@ -2267,6 +2410,10 @@ svg .icon path{
   }
    .Footer__Content.expanded {
     display: block;
+  }
+
+  .expanded {
+    display: none;
   }
 }
 
